@@ -2,166 +2,132 @@
   "sneakers": [
       {
           "id": 1,
-          "name": "Air Jordan 1 Retro High University Blue",
-          "price": 470,
-          "release_date": "2021-03-06",
-          "colors": "blue",
-          "delivery_time": 5,
-          "delivery_price": 6,
+          "name": "Huawei Watch Buds",
+          "description": "",
+          "price": 500,
+          "autonomy": 3,
+          "color": "black",
+          "compatibility": "compatible with all smartphones",
           "reduction": 0,
-          "img_1": "sneakers/sneaker1/img1.jpg",
-          "img_2": "sneakers/sneaker1/img2.jpg",
-          "img_3": "sneakers/sneaker1/img3.jpg",
-          "available": true,
-          "sizes": "36.5;37;38;38.5;39;40;40.5;41;42;43;43.5;44;45;45.5;46"
+          "img_1": "images/HuaweiWatchBuds/image1.jpg",
+          "img_2": "images/HuaweiWatchBuds/image2.jpg",
+          "img_3": "images/HuaweiWatchBuds/image3.jpg"
       },
       {
           "id": 2,
-          "name": "Air Force 1 Low White Supreme",
-          "price": 190,
-          "release_date": "2020-03-05",
-          "colors": "white",
-          "delivery_time": 2,
-          "delivery_price": 6,
-          "reduction": 14,
-          "img_1": "sneakers/sneaker2/img1.jpg",
-          "img_2": "sneakers/sneaker2/img2.jpg",
-          "img_3": "sneakers/sneaker2/img3.jpg",
-          "available": false,
-          "sizes": "36.5;37;38;38.5;39;40;40.5;41;42;43;43.5;44;45;45.5;46"
+          "name": "Huawei Watch Ultimate",
+          "description": "",
+          "price": 750,
+          "autonomy": 14,
+          "color": "black or Blue",
+          "compatibility": "compatible with all smartphones",
+          "reduction": 0,
+          "img_1": "images/HuaweiWatchUltimate/image1.jpg",
+          "img_2": "images/HuaweiWatchUltimate/image2.jpg",
+          "img_3": "images/HuaweiWatchUltimate/image3.jpg"
       },
       {
           "id": 3,
-          "name": "Air Jordan 4 University Blue",
-          "price": 330,
-          "release_date": "2021-04-28",
-          "colors": "blue",
-          "delivery_time": 3,
-          "delivery_price": 7,
+          "name": "Huawei Mate 50 Pro",
+          "description": "",
+          "price": 1200,
+          "autonomy": 1,
+          "colors": "black or silver or orange",
+          "storage": "512",
           "reduction": 0,
-          "img_1": "sneakers/sneaker3/img1.jpg",
-          "img_2": "sneakers/sneaker3/img2.jpg",
-          "img_3": "sneakers/sneaker3/img3.jpg",
-          "available": true,
-          "sizes": "36.5;37;38;38.5;39;40;40.5;41;42;43;43.5;44;45;45.5;46"
+          "img_1": "images/HuaweiMate50Pro/image1.jpg",
+          "img_2": "images/HuaweiMate50Pro/image2.jpg",
+          "img_3": "images/HuaweiMate50Pro/image3.jpg"
       },
       {
           "id": 4,
           "name": "Air max Plus Triple Black",
+          "description": "",
           "price": 170,
-          "release_date": "2021-06-01",
           "colors": "black",
-          "delivery_time": 5,
-          "delivery_price": 3,
-          "reduction": 6,
+          "reduction": 0,
           "img_1": "sneakers/sneaker4/img1.jpg",
           "img_2": "",
-          "img_3": "",
-          "available": true,
-          "sizes": "36.5;37;38;38.5;39;40;40.5;41;42;43;43.5;44;45;45.5;46"
+          "img_3": ""
       },
       {
           "id": 5,
           "name": "Nike Air More Uptempo Peace & Love",
+          "description": "",
           "price": 160,
-          "release_date": "2021-02-15",
           "colors": "white",
-          "delivery_time": 8,
-          "delivery_price": 0,
-          "reduction": 10,
+          "reduction": 0,
           "img_1": "sneakers/sneaker5/img1.jpg",
           "img_2": "sneakers/sneaker5/img2.jpg",
-          "img_3": "sneakers/sneaker5/img3.jpg",
-          "available": true,
-          "sizes": "36.5;37;38;38.5;39;40;40.5;41;42;43;43.5;44;45;45.5;46"
+          "img_3": "sneakers/sneaker5/img3.jpg"
       },
       {
           "id": 6,
           "name": "Dunk Low Disrupt Sea Glass White",
+          "description": "",
           "price": 210,
-          "release_date": "2021-08-23",
           "colors": "white",
-          "delivery_time": 6,
-          "delivery_price": 5,
           "reduction": 0,
           "img_1": "sneakers/sneaker6/img1.jpg",
           "img_2": "sneakers/sneaker6/img2.jpg",
-          "img_3": "",
-          "available": true,
-          "sizes": "36.5;37;38;38.5;39;40;40.5;41;42;43;43.5;44;45;45.5;46"
+          "img_3": ""
       },
       {
           "id": 7,
           "name": "SB Dunk Low Pro Fog",
+          "description": "",
           "price": 240,
-          "release_date": "2021-12-13",
           "colors": "black",
-          "delivery_time": 4,
-          "delivery_price": 9,
           "reduction": 15,
           "img_1": "sneakers/sneaker7/img1.jpg",
           "img_2": "sneakers/sneaker7/img2.jpg",
-          "img_3": "",
-          "available": true,
-          "sizes": "36.5;37;38;38.5;39;40;40.5;41;42;43;43.5;44;45;45.5;46"
+          "img_3": ""
       },
       {
           "id": 8,
           "name": "Air Force 1 Low Metallic Chrome",
+          "description": "",
           "price": 180,
-          "release_date": "2021-02-15",
           "colors": "grey",
-          "delivery_time": 6,
-          "delivery_price": 4,
           "reduction": 0,
           "img_1": "sneakers/sneaker8/img1.jpg",
           "img_2": "sneakers/sneaker8/img2.jpg",
-          "img_3": "sneakers/sneaker8/img3.jpg",
-          "available": true,
-          "sizes": "36.5;37;38;38.5;39;40;40.5;41;42;43;43.5;44;45;45.5;46"
+          "img_3": "sneakers/sneaker8/img3.jpg"
       },
       {
           "id": 9,
           "name": "Air Force 1 Low 07 LV8 Lakers",
+          "description": "",
           "price": 180,
-          "release_date": "2021-10-08",
           "colors": "grey",
-          "delivery_time": 7,
-          "delivery_price": 0,
           "reduction": 5,
           "img_1": "sneakers/sneaker8/img1.jpg",
           "img_2": "sneakers/sneaker8/img2.jpg",
-          "img_3": "sneakers/sneaker8/img3.jpg",
-          "available": false,
-          "sizes": "36.5;37;38;38.5;39;40;40.5;41;42;43;43.5;44;45;45.5;46"
+          "img_3": "sneakers/sneaker8/img3.jpg"
       },
       {
           "id": 10,
           "name": "Air Jordan 4 Retro Kaws Grey",
+          "description": "",
           "price": 2380,
-          "release_date": "2017-03-31",
           "colors": "grey",
-          "delivery_time": 7,
-          "delivery_price": 3,
           "reduction": 12,
           "img_1": "sneakers/sneaker8/img1.jpg",
           "img_2": "sneakers/sneaker8/img2.jpg",
-          "img_3": "sneakers/sneaker8/img3.jpg",
-          "available": true,
-          "sizes": "36.5;37;38;38.5;39;40;40.5;41;42;43;43.5;44;45;45.5;46"
+          "img_3": "sneakers/sneaker8/img3.jpg"
       }
   ],
   "category": [
       {
-          "id": 0,
+          "id": "A",
           "name": "Commune"
       },
       {
-          "id": 1,
+          "id": "B",
           "name": "Rare"
       },
       {
-          "id": 2,
+          "id": "C",
           "name": "Légendaire"
       }
   ]

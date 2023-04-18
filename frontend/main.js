@@ -17,6 +17,7 @@ function LoadSneakers() {
             filteredsneakers = sneakers;
             console.log(sneakers, filteredsneakers);
             GetSneakers();
+            loadcart();
             
         })
         .catch(error => console.log("erreur : " + error));
@@ -34,6 +35,7 @@ function GetSneakers() {
         <img class="sneaker-img" src="${sneaker.img_1}" />
         <div class="nom-sneaker"> ${sneaker.name} </div>
         <div> ${sneaker.price}€ </div>
+        <button onclick="addSneakers(${sneaker.id})"> Ajouter au panier </button>
         
         `;
         container.appendChild(sneakerctn);
@@ -92,6 +94,55 @@ function compareByPriceAscending (a, b) {
 function sortByPriceAsc() {
     filteredsneakers.sort(compareByPriceAscending);
     GetSneakers();
+}
+
+//toggle cart
+
+const cartIcon = document.querySelector(".cart-icon");
+const cartCtn = document.querySelector(".cart-ctn");
+
+cartIcon.addEventListener("click", toggleCart);
+
+function toggleCart() {
+    cartCtn.classList.toggle("open-cart");
+    if(cartCtn.classList.contains("open-cart")) {
+        cartIcon.src = "sneakers/logo/close.png";
+    } else {
+        cartIcon.src = "sneakers/logo/cart.png";
+    }
+}
+
+//localStorage
+
+let cartList = JSON.parse(localStorage.getItem("cart")) || [];
+
+function addSneakers(id) {
+    let sneaker = sneakers.find(sneaker => sneaker.id === id);
+    cartList.push(sneaker);
+    localStorage.setItem("cart", JSON.stringify(cartList));
+    loadcart();
+}
+
+function loadcart() {
+    cartCtn.innerHTML = "";
+    cartList.forEach(sneaker => {
+        let sneakerCart = document.createElement("div");
+        sneakerCart.classList.add("cart-item");
+        sneakerCart.innerHTML = `
+        <img class="cart-sneaker-img" src="${sneaker.img_1}" />
+        <div> ${sneaker.name} </div>
+        <div> ${sneaker.price}€ </div>
+        <button onclick="removefromcard(${sneaker.id})"> Supprimer </button>
+        `;
+        cartCtn.appendChild(sneakerCart);
+    });
+}
+
+function removefromcard(id) {
+    let indexToRemove = cartList.findIndex(sneaker => sneaker.id === id);
+    cartList.splice(indexToRemove, 1);
+    localStorage.setItem("cart", JSON.stringify(cartList));
+    loadcart();
 }
 
 //lancement de la fonction

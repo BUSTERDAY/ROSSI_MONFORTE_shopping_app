@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+body{
+    overflow-x: hidden;
+}
+
 .color-picker-ctn{
     margin: 10px 0;
     display: flex;
@@ -44,4 +48,37 @@
 
 .sneaker-img{
     width: 300px
+}
+
+.cart-icon{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    right: 10px;
+    top: 10px;
+    z-index: 10;
+}
+.cart-ctn{
+    background: #f5f5f5;
+    position: absolute;
+    top: 0 ;
+    right: -500px;
+    width: 500px;
+    height: 100vh;
+    max-width: 100vw;
+    z-index: 9;
+    padding-top: 80px;
+}
+.open-cart{
+    right: 0;
+}
+
+.cart-item{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.cart-sneaker-img{
+    width: 75px;
+    border-radius: 10px;
 }

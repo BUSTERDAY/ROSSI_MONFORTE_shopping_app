@@ -1,44 +1,44 @@
 const url = "http://localhost:3000";
-const container = document.querySelector(".ctn-sneakers");
+const container = document.querySelector(".ctn-hightechs");
 const pickers = document.querySelectorAll(".picker");
 
-let sneakers;
-let filteredsneakers;
+let hightechs;
+let filteredhightechs;
 
-//chargement des sneakers
+//chargement des objets hightechs
 
-function LoadSneakers() {
-    fetch(`${url}/sneakers`)
+function Loadhightechs() {
+    fetch(`${url}/hightechs`)
         .then(response => {
             return response.json();
         })
         .then(data => {
-            sneakers = data.sneakers;
-            filteredsneakers = sneakers;
-            console.log(sneakers, filteredsneakers);
-            GetSneakers();
+            hightechs = data.hightechs;
+            filteredhightechs = hightechs;
+            console.log(hightechs, filteredhightechs);
+            Gethightechs();
             loadcart();
             
         })
         .catch(error => console.log("erreur : " + error));
 }
 
-//récupération des sneakers
+//récupération des objets hightechs
 
-function GetSneakers() {
+function Gethightechs() {
     container.innerHTML = "";
-    console.log(filteredsneakers);
-    filteredsneakers.forEach(sneaker => {
-        let sneakerctn = document.createElement("div");
-        sneakerctn.classList.add("sneaker-item");
-        sneakerctn.innerHTML = `
-        <img class="sneaker-img" src="${sneaker.img_1}" />
-        <div class="nom-sneaker"> ${sneaker.name} </div>
-        <div> ${sneaker.price}€ </div>
-        <button onclick="addSneakers(${sneaker.id})"> Ajouter au panier </button>
+    console.log(filteredhightechs);
+    filteredhightechs.forEach(hightech => {
+        let hightechCtn = document.createElement("div");
+        hightechCtn.classList.add("hightech-item");
+        hightechCtn.innerHTML = `
+        <img class="hightech-img" src="${hightech.img_1}" />
+        <div class="nom-hightech"> ${hightech.name} </div>
+        <div> ${hightech.price}€ </div>
+        <button onclick="addForCarts(${hightech.id})"> Ajouter au panier </button>
         
         `;
-        container.appendChild(sneakerctn);
+        container.appendChild(hightechCtn);
 
     });
 }
@@ -66,18 +66,18 @@ function SelectItem(e) {
 
 function FilterByColor(color) {
     if (color === "all") {
-        filteredsneakers = sneakers;
-        GetSneakers();
+        filteredhightechs = hightechs;
+        Gethightechs();
     } else {
-        filteredsneakers = sneakers.filter((sneaker) => sneaker.colors === color);
-        if (filteredsneakers.length <= 0) {
+        filteredhightechs = hightechs.filter((hightech) => hightech.colors === color);
+        if (filteredhightechs.length <= 0) {
             container.innerHTML = "Aucun résultat";
         } else {
-            GetSneakers();
+            Gethightechs();
         }
     }
     
-    GetSneakers();
+    Gethightechs();
     
 }
 
@@ -92,11 +92,11 @@ function compareByPriceAscending (a, b) {
 }
 
 function sortByPriceAsc() {
-    filteredsneakers.sort(compareByPriceAscending);
-    GetSneakers();
+    filteredhightechs.sort(compareByPriceAscending);
+    Gethightechs();
 }
 
-//toggle cart
+//création cartes
 
 const cartIcon = document.querySelector(".cart-icon");
 const cartCtn = document.querySelector(".cart-ctn");
@@ -106,9 +106,9 @@ cartIcon.addEventListener("click", toggleCart);
 function toggleCart() {
     cartCtn.classList.toggle("open-cart");
     if(cartCtn.classList.contains("open-cart")) {
-        cartIcon.src = "sneakers/logo/close.png";
+        cartIcon.src = "images/logo/close.png";
     } else {
-        cartIcon.src = "sneakers/logo/cart.png";
+        cartIcon.src = "images/logo/cart.png";
     }
 }
 
@@ -116,30 +116,30 @@ function toggleCart() {
 
 let cartList = JSON.parse(localStorage.getItem("cart")) || [];
 
-function addSneakers(id) {
-    let sneaker = sneakers.find(sneaker => sneaker.id === id);
-    cartList.push(sneaker);
+function addForCarts(id) {
+    let hightech = hightechs.find(hightech => hightech.id === id);
+    cartList.push(hightech);
     localStorage.setItem("cart", JSON.stringify(cartList));
     loadcart();
 }
 
 function loadcart() {
     cartCtn.innerHTML = "";
-    cartList.forEach(sneaker => {
-        let sneakerCart = document.createElement("div");
-        sneakerCart.classList.add("cart-item");
-        sneakerCart.innerHTML = `
-        <img class="cart-sneaker-img" src="${sneaker.img_1}" />
-        <div> ${sneaker.name} </div>
-        <div> ${sneaker.price}€ </div>
-        <button onclick="removefromcard(${sneaker.id})"> Supprimer </button>
+    cartList.forEach(hightech => {
+        let hightechCart = document.createElement("div");
+        hightechCart.classList.add("cart-item");
+        hightechCart.innerHTML = `
+        <img class="cart-hightech-img" src="${hightech.img_1}" />
+        <div> ${hightech.name} </div>
+        <div> ${hightech.price}€ </div>
+        <button onclick="removefromcard(${hightech.id})"> Supprimer </button>
         `;
-        cartCtn.appendChild(sneakerCart);
+        cartCtn.appendChild(hightechCart);
     });
 }
 
 function removefromcard(id) {
-    let indexToRemove = cartList.findIndex(sneaker => sneaker.id === id);
+    let indexToRemove = cartList.findIndex(hightech => hightech.id === id);
     cartList.splice(indexToRemove, 1);
     localStorage.setItem("cart", JSON.stringify(cartList));
     loadcart();
@@ -147,4 +147,4 @@ function removefromcard(id) {
 
 //lancement de la fonction
 
-LoadSneakers();
+Loadhightechs();

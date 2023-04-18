@@ -1,5 +1,5 @@
 {
-  "sneakers": [
+  "hightechs": [
       {
           "id": 1,
           "name": "Huawei Watch Buds",
@@ -83,52 +83,52 @@
           "name": "matebook 16s",
           "description": "",
           "price": 1500,
-          "autonomy": "",
+          "autonomy": "8h",
           "colors": "grey",
           "storage": "1TO",
           "reduction": 0,
-          "img_1": "",
-          "img_2": "",
-          "img_3": ""
+          "img_1": "images/matebook16s/image1.jpg",
+          "img_2": "images/matebook16s/image2.jpg",
+          "img_3": "images/matebook16s/image3.jpg"
       },
       {
           "id": 8,
           "name": "matebook 14s",
           "description": "",
-          "price": ,
-          "autonomy": "",
-          "colors": "",
-          "storage": "",
+          "price": 1300,
+          "autonomy": "10h",
+          "colors": "grey",
+          "storage": "1TO",
           "reduction": 0,
-          "img_1": "",
-          "img_2": "",
-          "img_3": ""
+          "img_1": "images/matebook14s/image1.jpg",
+          "img_2": "images/matebook14s/image2.jpg",
+          "img_3": "images/matebook14s/image3.jpg"
       },
       {
           "id": 9,
           "name": "matebook E",
           "description": "",
-          "price": ,
-          "autonomy": "",
-          "colors": "",
-          "storage": "",
+          "price": 650,
+          "autonomy": "6h",
+          "colors": "grey",
+          "storage": "128Go or 512 Go",
           "reduction": 0,
-          "img_1": "",
-          "img_2": "",
-          "img_3": ""
+          "img_1": "images/matebookE/image1.jpg",
+          "img_2": "images/matebookE/image2.jpg",
+          "img_3": "images/matebookE/image3.jpg"
       },
       {
           "id": 10,
           "name": "matebook D 16",
           "description": "",
-          "price": ,
-          "autonomy": "",
-          "colors": "",
-          "storage": "",
+          "price": 900,
+          "autonomy": "9h",
+          "colors": "grey",
+          "storage": "512 Go",
           "reduction": 0,
-          "img_1": "",
-          "img_2": "",
-          "img_3": ""
+          "img_1": "images/matebookd16/image1.jpg",
+          "img_2": "images/matebookd16/image2.jpg",
+          "img_3": "images/matebookd16/image3.jpg"
       }
   ],
   "category": [

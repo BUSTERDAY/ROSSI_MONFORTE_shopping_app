@@ -4,14 +4,14 @@ const cors = require('cors');
 const app = express();
 const port = 3000;
 
-const routesSneakers = require('./routes/sneakers.js');
+const routeshightechs = require('./routes/route.js');
 
 app.use(cors({
     origin: '*'
 }))
 
 
-app.use(routesSneakers);
+app.use(routeshightechs);
 
 
 

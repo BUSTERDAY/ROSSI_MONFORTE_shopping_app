@@ -32,21 +32,21 @@ body{
     border: 3px solid green;
 }
 
-.ctn-sneakers{
+.ctn-hightech{
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.sneaker-item{
+.hightech-item{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
 }
 
-.sneaker-img{
+.hightech-img{
     width: 300px
 }
 
@@ -78,7 +78,7 @@ body{
     align-items: center;
     gap: 10px;
 }
-.cart-sneaker-img{
+.cart-hightech-img{
     width: 75px;
     border-radius: 10px;
 }

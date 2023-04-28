@@ -31,11 +31,13 @@ function Gethightechs() {
     filteredhightechs.forEach(hightech => {
         let hightechCtn = document.createElement("div");
         hightechCtn.classList.add("hightech-item");
+        hightechCtn.id=`${hightech.id}`
         hightechCtn.innerHTML = `
         <img class="hightech-img" src="${hightech.img_1}" />
         <div class="nom-hightech"> ${hightech.name} </div>
         <div> ${hightech.price}€ </div>
         <button onclick="addForCarts(${hightech.id})"> Ajouter au panier </button>
+        <button name="id" type="submit" value="${hightech.id}">Voir fiche produit</button>
         
         `;
         container.appendChild(hightechCtn);

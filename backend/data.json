@@ -1,149 +1,148 @@
 {
   "hightechs": [
-      {
-          "id": 1,
-          "name": "Huawei Watch Buds",
-          "description": "",
-          "price": 500,
-          "autonomy": "3d",
-          "color": "black",
-          "compatibility": "compatible with all smartphones",
-          "reduction": 0,
-          "img_1": "images/HuaweiWatchBuds/image1.jpg",
-          "img_2": "images/HuaweiWatchBuds/image2.jpg",
-          "img_3": "images/HuaweiWatchBuds/image3.jpg"
-      },
-      {
-          "id": 2,
-          "name": "Huawei Watch Ultimate",
-          "description": "",
-          "price": 750,
-          "autonomy": "14d",
-          "color": "black or Blue",
-          "compatibility": "compatible with all smartphones",
-          "reduction": 0,
-          "img_1": "images/HuaweiWatchUltimate/image1.jpg",
-          "img_2": "images/HuaweiWatchUltimate/image2.jpg",
-          "img_3": "images/HuaweiWatchUltimate/image3.jpg"
-      },
-      {
-          "id": 3,
-          "name": "Huawei Mate 50 Pro",
-          "description": "",
-          "price": 1200,
-          "autonomy": "1d",
-          "colors": "black or silver or orange",
-          "storage": "512 GO",
-          "reduction": 0,
-          "img_1": "images/HuaweiMate50Pro/image1.jpg",
-          "img_2": "images/HuaweiMate50Pro/image2.jpg",
-          "img_3": "images/HuaweiMate50Pro/image3.jpg"
-      },
-      {
-          "id": 4,
-          "name": "Huawei nova 9",
-          "description": "",
-          "price": 500,
-          "autonomy": "1d",
-          "colors": "black or blue",
-          "storage": "256 GO",
-          "reduction": 0,
-          "img_1": "images/HuaweiNova9/image1.jpg", 
-          "img_2": "images/HuaweiNova9/image2.jpg", 
-          "img_3": ""
-      },
-      {
-          "id": 5,
-          "name": "Huawei Y6p",
-          "description": "",
-          "price": 160,
-          "autonomy": "1d",
-          "colors": "white",
-          "storage": "64 GO",
-          "reduction": 0,
-          "img_1": "images/HuaweiY6p/image1.jpg",
-          "img_2": "images/HuaweiY6p/image2.jpg",
-          "img_3": ""
-      },
-      {
-          "id": 6,
-          "name": "MateBook X Pro",
-          "description": "",
-          "price": 2000,
-          "autonomy": "8h",
-          "colors": "blue",
-          "storage": "1TO",
-          "reduction": 0,
-          "img_1": "images/matebookXPro/image1.jpg",
-          "img_2": "images/matebookXPro/image2.jpg",
-          "img_3": "images/matebookXPro/image3.jpg"
-      },
-      {
-          "id": 7,
-          "name": "matebook 16s",
-          "description": "",
-          "price": 1500,
-          "autonomy": "8h",
-          "colors": "grey",
-          "storage": "1TO",
-          "reduction": 0,
-          "img_1": "images/matebook16s/image1.jpg",
-          "img_2": "images/matebook16s/image2.jpg",
-          "img_3": "images/matebook16s/image3.jpg"
-      },
-      {
-          "id": 8,
-          "name": "matebook 14s",
-          "description": "",
-          "price": 1300,
-          "autonomy": "10h",
-          "colors": "grey",
-          "storage": "1TO",
-          "reduction": 0,
-          "img_1": "images/matebook14s/image1.jpg",
-          "img_2": "images/matebook14s/image2.jpg",
-          "img_3": "images/matebook14s/image3.jpg"
-      },
-      {
-          "id": 9,
-          "name": "matebook E",
-          "description": "",
-          "price": 650,
-          "autonomy": "6h",
-          "colors": "grey",
-          "storage": "128Go or 512 Go",
-          "reduction": 0,
-          "img_1": "images/matebookE/image1.jpg",
-          "img_2": "images/matebookE/image2.jpg",
-          "img_3": "images/matebookE/image3.jpg"
-      },
-      {
-          "id": 10,
-          "name": "matebook D 16",
-          "description": "",
-          "price": 900,
-          "autonomy": "9h",
-          "colors": "grey",
-          "storage": "512 Go",
-          "reduction": 0,
-          "img_1": "images/matebookd16/image1.jpg",
-          "img_2": "images/matebookd16/image2.jpg",
-          "img_3": "images/matebookd16/image3.jpg"
-      }
+    {
+      "id": 1,
+      "name": "Huawei Watch Buds",
+      "description": "La Huawei Watch Buds est une paire d'écouteurs sans fil Bluetooth conçue pour les amateurs de fitness et les utilisateurs de téléphones Huawei. Les écouteurs sont équipés d'un capteur de fréquence cardiaque intégré qui mesure votre rythme cardiaque pendant vos séances d'entraînement. Les écouteurs ont également une autonomie de batterie de 10 heures et sont livrés avec un boîtier de charge portable qui peut recharger les écouteurs plusieurs fois avant d'avoir besoin d'être rechargé lui-même. Les écouteurs sont résistants à l'eau et à la poussière avec une certification IP54, ce qui signifie qu'ils sont adaptés aux entraînements en extérieur. Enfin, les écouteurs sont équipés de la technologie de réduction du bruit active pour offrir une expérience d'écoute immersive sans interruption.",
+      "price": 500,
+      "autonomy": "3d",
+      "color": "black",
+      "compatibility": "compatible with all smartphones",
+      "reduction": 0,
+      "img_1": "images/HuaweiWatchBuds/image1.jpg",
+      "img_2": "images/HuaweiWatchBuds/image2.jpg",
+      "img_3": "images/HuaweiWatchBuds/image3.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Huawei Watch Ultimate",
+      "description": "",
+      "price": 750,
+      "autonomy": "14d",
+      "color": "black or Blue",
+      "compatibility": "compatible with all smartphones",
+      "reduction": 0,
+      "img_1": "images/HuaweiWatchUltimate/image1.jpg",
+      "img_2": "images/HuaweiWatchUltimate/image2.jpg",
+      "img_3": "images/HuaweiWatchUltimate/image3.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Huawei Mate 50 Pro",
+      "description": "",
+      "price": 1200,
+      "autonomy": "1d",
+      "colors": "black or silver or orange",
+      "storage": "512 GO",
+      "reduction": 0,
+      "img_1": "images/HuaweiMate50Pro/image1.jpg",
+      "img_2": "images/HuaweiMate50Pro/image2.jpg",
+      "img_3": "images/HuaweiMate50Pro/image3.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Huawei nova 9",
+      "description": "",
+      "price": 500,
+      "autonomy": "1d",
+      "colors": "black or blue",
+      "storage": "256 GO",
+      "reduction": 0,
+      "img_1": "images/HuaweiNova9/image1.jpg",
+      "img_2": "images/HuaweiNova9/image2.jpg",
+      "img_3": ""
+    },
+    {
+      "id": 5,
+      "name": "Huawei Y6p",
+      "description": "",
+      "price": 160,
+      "autonomy": "1d",
+      "colors": "white",
+      "storage": "64 GO",
+      "reduction": 0,
+      "img_1": "images/HuaweiY6p/image1.jpg",
+      "img_2": "images/HuaweiY6p/image2.jpg",
+      "img_3": ""
+    },
+    {
+      "id": 6,
+      "name": "MateBook X Pro",
+      "description": "",
+      "price": 2000,
+      "autonomy": "8h",
+      "colors": "blue",
+      "storage": "1TO",
+      "reduction": 0,
+      "img_1": "images/matebookXPro/image1.jpg",
+      "img_2": "images/matebookXPro/image2.jpg",
+      "img_3": "images/matebookXPro/image3.jpg"
+    },
+    {
+      "id": 7,
+      "name": "matebook 16s",
+      "description": "",
+      "price": 1500,
+      "autonomy": "8h",
+      "colors": "grey",
+      "storage": "1TO",
+      "reduction": 0,
+      "img_1": "images/matebook16s/image1.jpg",
+      "img_2": "images/matebook16s/image2.jpg",
+      "img_3": "images/matebook16s/image3.jpg"
+    },
+    {
+      "id": 8,
+      "name": "matebook 14s",
+      "description": "",
+      "price": 1300,
+      "autonomy": "10h",
+      "colors": "grey",
+      "storage": "1TO",
+      "reduction": 0,
+      "img_1": "images/matebook14s/image1.jpg",
+      "img_2": "images/matebook14s/image2.jpg",
+      "img_3": "images/matebook14s/image3.jpg"
+    },
+    {
+      "id": 9,
+      "name": "matebook E",
+      "description": "",
+      "price": 650,
+      "autonomy": "6h",
+      "colors": "grey",
+      "storage": "128Go or 512 Go",
+      "reduction": 0,
+      "img_1": "images/matebookE/image1.jpg",
+      "img_2": "images/matebookE/image2.jpg",
+      "img_3": "images/matebookE/image3.jpg"
+    },
+    {
+      "id": 10,
+      "name": "matebook D 16",
+      "description": "",
+      "price": 900,
+      "autonomy": "9h",
+      "colors": "grey",
+      "storage": "512 Go",
+      "reduction": 0,
+      "img_1": "images/matebookd16/image1.jpg",
+      "img_2": "images/matebookd16/image2.jpg",
+      "img_3": "images/matebookd16/image3.jpg"
+    }
   ],
   "category": [
-      {
-          "id": "A",
-          "name": "Commune"
-      },
-      {
-          "id": "B",
-          "name": "Rare"
-      },
-      {
-          "id": "C",
-          "name": "Légendaire"
-      }
+    {
+      "id": "A",
+      "name": "Commune"
+    },
+    {
+      "id": "B",
+      "name": "Rare"
+    },
+    {
+      "id": "C",
+      "name": "Légendaire"
+    }
   ]
-  
 }

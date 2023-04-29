@@ -26,7 +26,7 @@ exports.gethightechById = (req, res) => {
     } else {
         res.status(200).json({
             message: "objets hightech trouver",
-            hightech : hightech.name
+            hightech : hightech
         });
     }
 };

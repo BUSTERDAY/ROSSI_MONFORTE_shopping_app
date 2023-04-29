@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+}
+
+.article{
+    height: 90%;
+    display: flex;
+
+}
+.left{
+    width: 300px;
+    height: 100%;
+    overflow: hidden;
+    margin-left: 50px;
+
+}
+
+.slider{
+    height: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.img_slid{
+    height: 70%;
+    width: 300px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.ctn-btn{
+    display: flex;
+    justify-content: space-evenly;
+    height: 10%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border: 0;
+}
+
+.ctn-btn button img{
+    height: 80px;
+    width: 80px;
+}
+
+
+.right{
+    width: 70%;
+    height: 100%;
+    overflow: hidden;;
+
+}
+
+.des{
+    font-size: 27px;
+}

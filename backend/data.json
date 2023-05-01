@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "Huawei Mate 50 Pro",
-      "description": "",
+      "description": "Le Huawei Mate 50 Pro est un smartphone haut de gamme doté d'un grand écran OLED incurvé de 6,74 pouces et d'un triple capteur photo (50 MP, 64 MP, 13 MP) pour des images claires et détaillées. Il est alimenté par un chipset Kirin 9000 avec 8 Go de RAM pour une expérience de navigation fluide. Cependant, il ne dispose pas des services Google pré-installés et n'a pas de connexion 5G. Il est équipé d'une batterie de 4700 mAh avec la charge rapide et sans fil, et est livré avec un chargeur 66W. Les tarifs pour les options de stockage de 256 ou 512 Go sont respectivement de 1299 euros et 1399 euros.",
       "price": 1200,
       "autonomy": "4 700 mAh",
       "colors": "black or silver or orange",
@@ -16,7 +16,7 @@
     {
       "id": 2,
       "name": "Huawei nova 9",
-      "description": "",
+      "description": "Le Huawei Nova 9 est un smartphone Android haut de gamme lancé en octobre 2021. Il est équipé d'un écran OLED de 6,57 pouces avec une résolution de 2340 x 1080 pixels. Le Nova 9 est alimenté par le chipset Kirin 820E de Huawei avec une RAM de 8 Go et une mémoire de stockage interne de 128 Go. Il dispose d'une caméra quadri-objectif à l'arrière, composée d'un capteur principal de 64 MP, d'un ultra grand-angle de 8 MP, d'un capteur macro de 2 MP et d'un capteur de profondeur de 2 MP. À l'avant, il y a une caméra selfie de 32 MP. Le smartphone est équipé d'une batterie de 4 300 mAh avec une charge rapide de 66 W et prend en charge la charge sans fil inversée. Le Huawei Nova 9 est également équipé de fonctionnalités telles que la connectivité 5G, la reconnaissance faciale et un lecteur d'empreintes digitales monté sur le côté. Le smartphone fonctionne sous EMUI 11.1 basé sur Android 10.",
       "price": 500,
       "autonomy": "4 300 mAh",
       "colors": "black or blue",
@@ -29,7 +29,7 @@
     {
       "id": 3,
       "name": "Huawei Y6p",
-      "description": "",
+      "description": "Le Huawei Y6p est un smartphone Android de milieu de gamme lancé en mai 2020. Il dispose d'un grand écran IPS LCD de 6,3 pouces avec une résolution de 1600 x 720 pixels. Le Y6p est équipé d'un chipset MediaTek Helio P22 avec une RAM de 3 Go et une mémoire de stockage interne de 64 Go. Il dispose d'une caméra triple à l'arrière, composée d'un capteur principal de 13 MP, d'un ultra grand-angle de 5 MP et d'un capteur de profondeur de 2 MP. À l'avant, il y a une caméra selfie de 8 MP. Le smartphone est équipé d'une batterie massive de 5 000 mAh avec une charge rapide de 10 W et prend en charge la charge inversée. Le Huawei Y6p est également équipé de fonctionnalités telles que la reconnaissance faciale et un lecteur d'empreintes digitales monté à l'arrière. Le smartphone fonctionne sous EMUI 10.1 basé sur Android 10.",
       "price": 160,
       "autonomy": "5 000 mAh",
       "colors": "white",
@@ -42,33 +42,33 @@
     {
       "id": 4,
       "name": "Galaxy S23 Ultra",
-      "description": "",
+      "description": "Le Galaxy S23 Ultra de Samsung a été récemment dévoilé et reprend en grande partie le design de son prédécesseur, le S22 Ultra. Il mesure 78,1 x 163,4 x 8,9 mm pour 234 grammes et se distingue par sa polyvalence photo grâce à ses différents modules, dont un capteur principal de 200 Mpx. Il intègre une batterie de 5000 mAh, un écran de 6,8 pouces avec une définition QDH+ et un taux de rafraîchissement de 1 à 120 Hz, ainsi qu'un stylet. Il sera équipé de la puce Snapdragon 8 Gen 2 overclockée à 3,36 GHz. Il sera disponible en précommande à partir du 17 février 2023 avec plusieurs options de stockage et de coloris",
       "price": 1419,
       "autonomy": "5 000 mAh",
-      "color": "green,  black",
+      "colors": "green,  black",
       "storage": "256GO or 512GO or 1To",
       "reduction": 0,
-      "img_1": "images/GalaxyS23Ultra/image1.jpg",
-      "img_2": "images/GalaxyS23Ultra/image2.jpg",
-      "img_3": "images/GalaxyS23Ultra/image3.jpg"
+      "img_1": "images/GalaxyS23Ultra/image1.png",
+      "img_2": "images/GalaxyS23Ultra/image2.png",
+      "img_3": "images/GalaxyS23Ultra/image3.png"
     },
     {
       "id": 5,
       "name": "Galaxy Z Flip 3",
-      "description": "",
+      "description": "Le Samsung Galaxy Z Flip 3 est un smartphone pliable lancé en août 2021. Il dispose d'un écran AMOLED dynamique de 6,7 pouces avec une résolution de 2640 x 1080 pixels. L'écran peut être plié en deux pour réduire la taille du smartphone lorsqu'il n'est pas utilisé. Le Galaxy Z Flip 3 est alimenté par le chipset Snapdragon 888 de Qualcomm avec une RAM de 8 Go et une mémoire de stockage interne de 128 Go ou 256 Go. Il dispose d'une caméra double à l'arrière, composée d'un capteur principal grand-angle de 12 MP et d'un ultra grand-angle de 12 MP. À l'avant, il y a une caméra selfie de 10 MP. Le smartphone est équipé d'une batterie de 3 300 mAh avec une charge rapide de 15 W et prend en charge la charge sans fil. Le Galaxy Z Flip 3 est également équipé de fonctionnalités telles que la connectivité 5G, la reconnaissance faciale, un capteur d'empreintes digitales latéral et il fonctionne sous Android 11 avec la surcouche One UI 3.5 de Samsung.",
       "price": 1109,
       "autonomy": "3 300 mAh",
-      "color": "blue",
+      "colors": "blue",
       "storage": "128Go or 256Go",
       "reduction": 0,
-      "img_1": "images/GalaxyZFlip4/image1.jpg",
-      "img_2": "images/GalaxyZFlip4/image2.jpg",
-      "img_3": "images/GalaxyZFlip4/image3.jpg"
+      "img_1": "images/GalaxyZFlip4/image1.png",
+      "img_2": "images/GalaxyZFlip4/image2.png",
+      "img_3": "images/GalaxyZFlip4/image3.png"
     },
     {
       "id": 6,
       "name": "Galaxy Z Fold 4",
-      "description": "",
+      "description": "Le Galaxy Z Fold 4 de Samsung est un smartphone pliable haut de gamme avec un grand écran AMOLED de 7,6 pouces qui peut être plié en deux pour une utilisation plus compacte. Il est équipé d'un triple appareil photo arrière de 12 MP chacun, d'une caméra selfie de 16 MP et d'un processeur Snapdragon 895. Il dispose également de 12 Go de RAM et de 512 Go de stockage interne. La batterie de 4400 mAh prend en charge la charge rapide et la charge sans fil. Le Z Fold 4 est compatible avec la 5G et fonctionne avec la dernière version de l'interface utilisateur de Samsung, One UI 4.5. Le prix de départ est de 1999 euros.",
       "price": 1599,
       "autonomy": "4 400 mAh",
       "colors": "black",
@@ -81,20 +81,20 @@
     {
       "id": 7,
       "name": "Honor Magic 5 Pro",
-      "description": "",
+      "description": "L'Honor Magic 5 Pro est un smartphone haut de gamme doté d'un écran AMOLED de 6,39 pouces et d'un triple capteur photo arrière (48, 16 et 2 MP). Il est équipé d'un processeur Kirin 990, de 8 Go de RAM et de 256 Go de stockage non extensible. Il possède une batterie de 4000 mAh et accepte la charge rapide et sans fil. Il dispose également d'un capteur de reconnaissance faciale 3D et d'un capteur d'empreintes digitales intégré à l'écran. Le smartphone est commercialisé au prix de 799 euros.",
       "price": 1099,
       "autonomy": "5 100 mAh",
       "colors": "black or green",
       "storage": "512 Go",
       "reduction": 0,
-      "img_1": "images/HonorMagic5Pro/image1.jpg",
-      "img_2": "images/HonorMagic5Pro/image2.jpg",
-      "img_3": "images/HonorMagic5Pro/image3.jpg"
+      "img_1": "images/HonorMagic5Pro/image1.png",
+      "img_2": "images/HonorMagic5Pro/image2.png",
+      "img_3": "images/HonorMagic5Pro/image3.png"
     },
     {
       "id": 8,
       "name": "Honor 70",
-      "description": "",
+      "description": "Le Honor 70 est un smartphone milieu de gamme avec un écran AMOLED de 6,58 pouces et une caméra frontale de 32 MP. Il dispose d'un triple capteur photo à l'arrière (50, 8, 2 MP) ainsi que d'une batterie de 4000 mAh compatible avec la charge rapide de 66W. Il est disponible en deux versions : 8 Go de RAM et 128 Go de stockage, ou 12 Go de RAM et 256 Go de stockage. Le Honor 70 est livré avec la surcouche Magic UI 5.1 basée sur Android 12. Son prix de départ est de 499 euros.",
       "price": 1100,
       "autonomy": "4 800 mAh",
       "colors": "green or black",
@@ -107,7 +107,7 @@
     {
       "id": 9,
       "name": "Honor X8 5G",
-      "description": "",
+      "description": "Le Honor X8 5G est un smartphone doté d'un écran IPS LCD de 6,6 pouces et d'un triple capteur photo (64, 8, 2 MP). Il fonctionne sous Android 11 et est compatible avec la 5G. Il dispose de 8 Go de RAM et de 128 Go de stockage interne extensible jusqu'à 512 Go. Il est alimenté par une batterie de 5000 mAh compatible avec la charge rapide sur port USB-C. Son design est sobre et élégant avec un dos en verre. Le Honor X8 5G est un excellent choix pour ceux qui recherchent un smartphone rapide et puissant compatible avec la 5G à un prix abordable.",
       "price": 250,
       "autonomy": "5 000 mAh",
       "colors": "blue or black",
@@ -120,7 +120,7 @@
     {
       "id": 10,
       "name": "Honor Magic 4 lite",
-      "description": "",
+      "description": "L'Honor Magic 4 Lite est un smartphone de milieu de gamme avec un écran OLED de 6,67 pouces et un taux de rafraîchissement de 90 Hz. Il est alimenté par un processeur MediaTek Dimensity 1200, accompagné de 8 Go de RAM et de 128 Go de stockage. Le téléphone dispose d'un système de caméra quadruple de 64 MP, 8 MP, 2 MP et 2 MP, ainsi que d'une caméra frontale de 16 MP. Il fonctionne avec une batterie de 4300 mAh et prend en charge une charge rapide de 66 W. Le Magic 4 Lite est disponible en trois couleurs : noir, bleu et blanc",
       "price": 230,
       "autonomy": "4 800 mAh",
       "colors": "black",

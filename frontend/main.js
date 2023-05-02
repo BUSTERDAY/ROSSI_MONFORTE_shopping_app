@@ -52,20 +52,30 @@ pickers.forEach(picker => {
     picker.addEventListener("click", SelectItem);
 });
 
-function SelectItem(e) {
+brands.forEach(brand => {
+    brand.addEventListener("click", SelectItem);
+});
+
+function SelectItem(e, f) {
     let picker = e.target;
+    let brand = f.target;
     let color = e.target.classList[2];
-    // let brand = e.target.classList[];
+    let marque = f.target.classList[2];
     pickers.forEach((e) => {
         e.classList.remove("selected");
 
     });
     picker.classList.add("selected");
+    brands.forEach((f) => {
+        f.classList.remove("selected");
+
+    });
+    brand.classList.add("selected");
 
     console.log(color);
-    // console.log(brand);
+    console.log(marque);
     FilterByColor(color);
-    // FilterByBrands(brand);
+    FilterByBrands(brand);
 }
 
 //Filtrage par couleur

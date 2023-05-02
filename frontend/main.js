@@ -1,6 +1,7 @@
 const url = "http://localhost:3000";
 const container = document.querySelector(".ctn-hightechs");
-const pickers = document.querySelectorAll(".picker");
+const pickers = document.querySelectorAll(".pickers");
+const brands = document.querySelectorAll(".brands");
 
 let hightechs;
 let filteredhightechs;
@@ -54,6 +55,7 @@ pickers.forEach(picker => {
 function SelectItem(e) {
     let picker = e.target;
     let color = e.target.classList[2];
+    // let brand = e.target.classList[];
     pickers.forEach((e) => {
         e.classList.remove("selected");
 
@@ -61,7 +63,9 @@ function SelectItem(e) {
     picker.classList.add("selected");
 
     console.log(color);
+    // console.log(brand);
     FilterByColor(color);
+    // FilterByBrands(brand);
 }
 
 //Filtrage par couleur
@@ -71,7 +75,7 @@ function FilterByColor(color) {
         filteredhightechs = hightechs;
         Gethightechs();
     } else {
-        filteredhightechs = hightechs.filter((hightech) => hightech.colors === color);
+        filteredhightechs = hightechs.filter((hightech) => hightech.colors.includes(color));
         if (filteredhightechs.length <= 0) {
             container.innerHTML = "Aucun résultat";
         } else {
@@ -83,7 +87,26 @@ function FilterByColor(color) {
     
 }
 
-//Tri par prix
+//Trie par marques
+
+function FilterByBrands(brand) {
+    if (brand === "all") {
+        filteredhightechs = hightechs;
+        Gethightechs();
+    } else {
+        filteredhightechs = hightechs.filter((hightech) => hightech.brands === brands);
+        if (filteredhightechs.length <= 0) {
+            container.innerHTML = "Aucun résultat";
+        } else {
+            Gethightechs();
+        }
+    }
+    
+    Gethightechs();
+    
+}
+
+//Tri par prix dans l'ordre croissant
 
 const priceBtnAsc = document.querySelector(".price-btn-asc");
 
@@ -97,6 +120,22 @@ function sortByPriceAsc() {
     filteredhightechs.sort(compareByPriceAscending);
     Gethightechs();
 }
+
+//Trie par prix dans l'ordre décroissant
+
+const priceBtnDesc = document.querySelector(".price-btn-desc");
+
+priceBtnDesc.addEventListener("click", sortByPriceDesc);
+
+function compareByPriceDescending (a, b) {
+    return b.price - a.price;
+}
+
+function sortByPriceDesc() {
+    filteredhightechs.sort(compareByPriceDescending);
+    Gethightechs();
+}
+
 
 //création cartes
 

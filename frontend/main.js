@@ -34,12 +34,13 @@ function Gethightechs() {
         hightechCtn.classList.add("hightech-item");
         hightechCtn.id=`${hightech.id}`
         hightechCtn.innerHTML = `
-        <img class="hightech-img" src="${hightech.img_1}" />
-        <div class="nom-hightech"> ${hightech.name} </div>
-        <div> ${hightech.price}€ </div>
-        <button onclick="addForCarts(${hightech.id})"> Ajouter au panier </button>
-        <button name="id" type="submit" value="${hightech.id}">Voir fiche produit</button>
-        
+        <div class="CardByIndex"> 
+            <img class="hightech-img" src="${hightech.img_1}" />
+            <div class="nom-hightech"> ${hightech.name} </div>
+            <div> ${hightech.price}€ </div>
+            <button onclick="addForCarts(${hightech.id})"> Ajouter au panier </button>
+            <button name="id" type="submit" value="${hightech.id}">Voir fiche produit</button>
+        </div>
         `;
         container.appendChild(hightechCtn);
 
@@ -48,70 +49,80 @@ function Gethightechs() {
 
 //Filtrage
 
+let ActualSelectedColor = "all";
+let ActualSelectedBrand = "all";
+
 pickers.forEach(picker => {
     picker.addEventListener("click", SelectItem);
 });
 
-brands.forEach(brand => {
-    brand.addEventListener("click", SelectItem);
-});
-
-function SelectItem(e, f) {
+function SelectItem(e) {
     let picker = e.target;
-    let brand = f.target;
     let color = e.target.classList[2];
-    let marque = f.target.classList[2];
     pickers.forEach((e) => {
         e.classList.remove("selected");
 
     });
     picker.classList.add("selected");
+
+    console.log(color);
+    ActualSelectedColor = color;
+    Filter(ActualSelectedColor, ActualSelectedBrand);
+}
+
+brands.forEach(brand => {
+    brand.addEventListener("click", SelectItemByBrand);
+});
+
+function SelectItemByBrand(f) {
+    let brand = f.target;
+    let marque = f.target.classList[2];
+    
     brands.forEach((f) => {
         f.classList.remove("selected");
 
     });
     brand.classList.add("selected");
 
-    console.log(color);
     console.log(marque);
-    FilterByColor(color);
-    FilterByBrands(brand);
+    ActualSelectedBrand = marque;
+    Filter(ActualSelectedColor, ActualSelectedBrand);
 }
 
-//Filtrage par couleur
+//Filtrage par couleur et marque
 
-function FilterByColor(color) {
-    if (color === "all") {
+function Filter(color, brand) {
+    if (color == "all" && brand == "all") {
         filteredhightechs = hightechs;
         Gethightechs();
-    } else {
+    } else if (color == "all") {
+        filteredhightechs = hightechs.filter((hightech) => hightech.brands === brand);
+        console.log(filteredhightechs)
+        if (filteredhightechs.length <= 0) {
+            container.innerHTML = "Aucun résultat";
+        } else {
+            Gethightechs();
+        }
+
+    } else if (brand == "all") {
         filteredhightechs = hightechs.filter((hightech) => hightech.colors.includes(color));
+        console.log(filteredhightechs)
         if (filteredhightechs.length <= 0) {
             container.innerHTML = "Aucun résultat";
         } else {
             Gethightechs();
         }
-    }
-    
-    Gethightechs();
-    
-}
-
-//Trie par marques
-
-function FilterByBrands(brand) {
-    if (brand === "all") {
-        filteredhightechs = hightechs;
-        Gethightechs();
+        
     } else {
-        filteredhightechs = hightechs.filter((hightech) => hightech.brands === brands);
+        filteredhightechs = hightechs.filter((hightech) => hightech.colors.includes(color) && hightech.brands === brand);
+        console.log(filteredhightechs)
         if (filteredhightechs.length <= 0) {
             container.innerHTML = "Aucun résultat";
         } else {
             Gethightechs();
         }
     }
-    
+
     Gethightechs();
     
 }

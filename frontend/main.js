@@ -19,7 +19,7 @@ function Loadhightechs() {
             console.log(hightechs, filteredhightechs);
             Gethightechs();
             loadcart();
-            
+
         })
         .catch(error => console.log("erreur : " + error));
 }
@@ -32,7 +32,7 @@ function Gethightechs() {
     filteredhightechs.forEach(hightech => {
         let hightechCtn = document.createElement("div");
         hightechCtn.classList.add("hightech-item");
-        hightechCtn.id=`${hightech.id}`
+        hightechCtn.id = `${hightech.id}`
         hightechCtn.innerHTML = `
         <div class="CardByIndex"> 
             <img class="hightech-img" src="${hightech.img_1}" />
@@ -40,7 +40,9 @@ function Gethightechs() {
             <div class="nom-hightech"> ${hightech.name} </div>
             <div> ${hightech.price}€ </div>
             <button onclick="addForCarts(${hightech.id})"> Ajouter au panier </button>
-            <button name="id" type="submit" value="${hightech.id}">Voir fiche produit</button>
+            <form method="GET" action="detail.html">
+                <button name="id" type="submit" value="${hightech.id}">Voir fiche produit</button>
+            </form>
         </div>
         `;
         container.appendChild(hightechCtn);
@@ -79,7 +81,7 @@ brands.forEach(brand => {
 function SelectItemByBrand(f) {
     let brand = f.target;
     let marque = f.target.classList[2];
-    
+
     brands.forEach((f) => {
         f.classList.remove("selected");
 
@@ -114,7 +116,7 @@ function Filter(color, brand) {
         } else {
             Gethightechs();
         }
-        
+
     } else {
         filteredhightechs = hightechs.filter((hightech) => hightech.colors.includes(color) && hightech.brands === brand);
         console.log(filteredhightechs)
@@ -126,7 +128,7 @@ function Filter(color, brand) {
     }
 
     Gethightechs();
-    
+
 }
 
 //Tri par prix dans l'ordre croissant
@@ -135,7 +137,7 @@ const priceBtnAsc = document.querySelector(".price-btn-asc");
 
 priceBtnAsc.addEventListener("click", sortByPriceAsc);
 
-function compareByPriceAscending (a, b) {
+function compareByPriceAscending(a, b) {
     return a.price - b.price;
 }
 
@@ -150,7 +152,7 @@ const priceBtnDesc = document.querySelector(".price-btn-desc");
 
 priceBtnDesc.addEventListener("click", sortByPriceDesc);
 
-function compareByPriceDescending (a, b) {
+function compareByPriceDescending(a, b) {
     return b.price - a.price;
 }
 
@@ -169,7 +171,7 @@ cartIcon.addEventListener("click", toggleCart);
 
 function toggleCart() {
     cartCtn.classList.toggle("open-cart");
-    if(cartCtn.classList.contains("open-cart")) {
+    if (cartCtn.classList.contains("open-cart")) {
         cartIcon.src = "images/logo/close.png";
     } else {
         cartIcon.src = "images/logo/cart.png";
@@ -200,6 +202,7 @@ function loadcart() {
         `;
         cartCtn.appendChild(hightechCart);
     });
+    Loadbottomcart();
 }
 
 function removefromcard(id) {
@@ -208,6 +211,36 @@ function removefromcard(id) {
     localStorage.setItem("cart", JSON.stringify(cartList));
     loadcart();
 }
+
+function removeall() {
+    console.log("ton pere")
+    cartList.splice(0, cartList.length);
+    localStorage.setItem("cart", JSON.stringify(cartList));
+    loadcart();
+}
+
+let btn_supr = document.createElement("button")
+
+function Loadbottomcart() {
+    let total_price = document.createElement("div");
+    total_price.className = "price";
+    nbr = 0;
+    for (let i = 0; i < cartList.length; i++) {
+        console.log((cartList[i].price));
+        nbr += cartList[i].price;
+    }
+    console.log(nbr)
+    total_price.innerHTML = `Prix total: ${nbr}`
+    cartCtn.appendChild(total_price)
+    btn_supr.className = "All"
+    btn_supr.innerHTML = "Tout supprimer"
+    cartCtn.appendChild(btn_supr);
+    let btn_com = document.createElement("button")
+    btn_com.className = "com"
+    btn_com.innerHTML = "commander"
+    cartCtn.appendChild(btn_com);
+}
+btn_supr.addEventListener("click", removeall)
 
 //Lancement de la fonction
 

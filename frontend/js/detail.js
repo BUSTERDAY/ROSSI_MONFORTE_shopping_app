@@ -19,7 +19,7 @@ function LoadId() {
             console.log(produit);
             LoadSlider();
             LoadInfo();
-
+            loadcart();
         })
         .catch(error => console.log("erreur =" + error));
 }
@@ -27,64 +27,155 @@ function LoadId() {
 //affichage image +carroussel
 function LoadSlider() {
     let slider = document.querySelector(".slider")
-    let ctn_btn =  document.querySelector(".ctn-btn")
-    let nbr_img= 0
+    let ctn_btn = document.querySelector(".ctn-btn")
+    let nbr_img = 0
     let p = 1;
     for (let i = 1; i <= 3; i++) {
         console.log(produit[`img_${i}`] !== "")
-        if (produit[`img_${i}`] !== ""){
+        if (produit[`img_${i}`] !== "") {
             nbr_img++
-            slider.style.width = (300 *nbr_img) +"px"
-            let  div=document.createElement("div")
-            div.className ="img_slid";
-            div.style.backgroundImage="url("+produit[`img_${i}`]+")";
+            slider.style.width = (300 * nbr_img) + "px"
+            let div = document.createElement("div")
+            div.className = "img_slid";
+            div.style.backgroundImage = "url(" + produit[`img_${i}`] + ")";
             slider.appendChild(div);
-            let btn =document.createElement("button")
-            btn.className="btn-img";
+            let btn = document.createElement("button")
+            btn.className = "btn-img";
             btn.value = `${i}`;
-            btn.innerHTML =`
+            btn.innerHTML = `
             <img class="btn_img" src = "${produit[`img_${i}`]}" alt ="${i}"/>
             `;
             ctn_btn.appendChild(btn);
-       }
+        }
     }
-    let btn_img=document.querySelectorAll(".btn-img")
-   for (let i =0;i < btn_img.length;i++){
-        btn_img[i].addEventListener("click",function (){
-            console.log( btn_img[i].value)
-            p = -btn_img[i].value+1;
-            slider.style.transform="translate("+p*"300"+"px)";
-            slider.style.transition ="all 0.5s ease";
+    let btn_img = document.querySelectorAll(".btn-img")
+    for (let i = 0; i < btn_img.length; i++) {
+        btn_img[i].addEventListener("click", function () {
+            console.log(btn_img[i].value)
+            p = -btn_img[i].value + 1;
+            slider.style.transform = "translate(" + p * "300" + "px)";
+            slider.style.transition = "all 0.5s ease";
         })
-   }
+    }
 }
 
-function LoadInfo(){
-    let container =document.querySelector(".right");
+function LoadInfo() {
+    let container = document.querySelector(".center");
     let tilte = document.createElement("h1")
-    tilte.innerHTML =`${produit.name}`
+    tilte.innerHTML = `${produit.name}`
     container.appendChild(tilte);
     let des = document.createElement("div")
-    des.className="des";
-    let txt_court =produit["description"].slice(0,150)
-    des.innerHTML=`${txt_court}...`;
+    des.className = "des";
+    let txt_court = produit["description"].slice(0, 150)
+    des.innerHTML = `${txt_court}...`;
     container.appendChild(des)
     let btn = document.createElement("button")
-    btn.className ="plus"
-    btn.innerHTML="Voir plus";
+    btn.className = "plus"
+    btn.innerHTML = "Voir plus";
     container.appendChild(btn)
     btn.addEventListener("click", () => {
-        des.textContent =produit["description"]
+        des.textContent = produit["description"]
         btn.style.display = "none";
     });
     let spec = document.createElement("div")
-    spec.className="spec";
+    spec.className = "spec";
     spec.innerHTML = `
     autonomie : ${produit["autonomy"]}<br>
     couleur : ${produit["colors"]}<br>
     storage : ${produit["storage"]}<br>
-    `
-    container.appendChild(spec)
+    `;
+    container.appendChild(spec);
+    let ctn = document.querySelector(".right");
+    let boite = document.createElement("div")
+    boite.innerHTML = `
+     Prix : ${produit["price"]}
+    <button onclick="addForCarts()">Ajouter au panier </button> 
+    `;
+    ctn.appendChild(boite)
+
+}
+
+let cartList = JSON.parse(localStorage.getItem("cart")) || [];
+const cartIcon = document.querySelector(".cart-icon");
+const cartCtn = document.querySelector(".cart-ctn");
+
+cartIcon.addEventListener("click", toggleCart);
+
+function addForCarts() {
+    cartList.push(produit);
+    localStorage.setItem("cart", JSON.stringify(cartList));
+    loadcart();
+}
+
+function loadcart() {
+    cartCtn.innerHTML = "";
+    console.log(cartList)
+    cartList.forEach(hightech => {
+        console.log("ici")
+        let hightechCart = document.createElement("div");
+        hightechCart.classList.add("cart-item");
+        hightechCart.innerHTML = `
+        <img class="cart-hightech-img" src="${hightech.img_1}" />
+        <div> ${hightech.name} </div>
+        <div> ${hightech.price}€ </div>
+        <button onclick="removefromcard(${hightech.id})"> Supprimer </button>
+        
+        `;
+
+        cartCtn.appendChild(hightechCart);
+    });
+    Loadbottomcart();
+}
+
+let btn_supr = document.createElement("button")
+
+function Loadbottomcart() {
+    let total_price = document.createElement("div");
+    total_price.className = "price";
+    nbr = 0;
+    for (let i = 0; i < cartList.length; i++) {
+        console.log((cartList[i].price));
+        nbr += cartList[i].price;
+    }
+    console.log(nbr)
+    total_price.innerHTML = `Prix total: ${nbr}`
+    cartCtn.appendChild(total_price)
+    btn_supr.className = "All"
+    btn_supr.innerHTML = "Tout supprimer"
+    cartCtn.appendChild(btn_supr);
+    let btn_com = document.createElement("button")
+    btn_com.className = "com"
+    btn_com.innerHTML = "commander"
+    cartCtn.appendChild(btn_com);
+
+}
+
+
+btn_supr.addEventListener("click", removeall)
+
+function removefromcard(id) {
+    let indexToRemove = cartList.findIndex(hightech => hightech.id === id)
+    cartList.splice(indexToRemove, 1);
+    localStorage.setItem("cart", JSON.stringify(cartList));
+    loadcart();
+
+}
+
+function removeall() {
+    console.log("ton pere")
+    cartList.splice(0,cartList.length);
+    localStorage.setItem("cart", JSON.stringify(cartList));
+    loadcart();
+}
+
+function toggleCart() {
+
+    cartCtn.classList.toggle("open-cart");
+    if (cartCtn.classList.contains("open-cart")) {
+        cartIcon.src = "images/logo/close.png";
+    } else {
+        cartIcon.src = "images/logo/cart.png";
+    }
 }
 
 

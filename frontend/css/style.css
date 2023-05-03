@@ -18,9 +18,9 @@ body{
     align-items: center;
     flex-wrap: wrap;
     gap: 10px;
-    margin: 10px 0;
-    background-color: beige;
-    padding: 20px;
+    background-color: white;
+    padding: 10px;
+    margin : 10px;
 }
 
 .CardByIndex button{
@@ -144,6 +144,18 @@ h4{
     height: 300px;
     width: 300px;
     background-image: none;
+}
+
+.hightech-img:hover{
+    display: none;
+}
+
+.hightech-img-hover{
+    height: 300px;
+    width: 300px;
+    background-image: none;
+    transition: 0.5s;
+    display: none;
 }
 
 .cart-icon{

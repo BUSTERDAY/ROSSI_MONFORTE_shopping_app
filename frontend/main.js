@@ -36,6 +36,7 @@ function Gethightechs() {
         hightechCtn.innerHTML = `
         <div class="CardByIndex"> 
             <img class="hightech-img" src="${hightech.img_1}" />
+            <img class="hightech-img-hover" src="${hightech.img_2}" />
             <div class="nom-hightech"> ${hightech.name} </div>
             <div> ${hightech.price}€ </div>
             <button onclick="addForCarts(${hightech.id})"> Ajouter au panier </button>
@@ -46,6 +47,7 @@ function Gethightechs() {
 
     });
 }
+
 
 //Filtrage
 
@@ -207,6 +209,6 @@ function removefromcard(id) {
     loadcart();
 }
 
-//lancement de la fonction
+//Lancement de la fonction
 
 Loadhightechs();

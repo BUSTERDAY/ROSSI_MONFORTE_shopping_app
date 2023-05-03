@@ -89,9 +89,14 @@ function LoadInfo() {
     let boite = document.createElement("div")
     boite.innerHTML = `
      Prix : ${produit["price"]}
-    <button onclick="addForCarts()">Ajouter au panier </button> 
     `;
-    ctn.appendChild(boite)
+    let bout = document.createElement("button");
+    bout.onclick=addForCarts();
+    bout.innerHTML="Ajouter au panier";
+    bout.className="add-cart" ;
+    ctn.appendChild(boite);
+    ctn.appendChild(bout);
+
 
 }
 
@@ -130,6 +135,9 @@ function loadcart() {
 let btn_supr = document.createElement("button")
 
 function Loadbottomcart() {
+    let bottom = document.createElement("div");
+    bottom.className ="bottom";
+    cartCtn.appendChild(bottom);
     let total_price = document.createElement("div");
     total_price.className = "price";
     nbr = 0;
@@ -139,14 +147,14 @@ function Loadbottomcart() {
     }
     console.log(nbr)
     total_price.innerHTML = `Prix total: ${nbr}`
-    cartCtn.appendChild(total_price)
+    bottom.appendChild(total_price)
     btn_supr.className = "All"
     btn_supr.innerHTML = "Tout supprimer"
-    cartCtn.appendChild(btn_supr);
+    bottom.appendChild(btn_supr);
     let btn_com = document.createElement("button")
     btn_com.className = "com"
     btn_com.innerHTML = "commander"
-    cartCtn.appendChild(btn_com);
+    bottom.appendChild(btn_com);
 
 }
 

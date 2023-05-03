@@ -195,7 +195,7 @@ function loadcart() {
         let hightechCart = document.createElement("div");
         hightechCart.classList.add("cart-item");
         hightechCart.innerHTML = `
-        <img class="cart-hightech-img" src="${hightech.img_1}" />
+        <img class="cart-hightech-img" src="${hightech.img_1}" alt="img" />
         <div> ${hightech.name} </div>
         <div> ${hightech.price}€ </div>
         <button onclick="removefromcard(${hightech.id})"> Supprimer </button>

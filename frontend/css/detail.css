@@ -4,13 +4,18 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-body{
-    height: 100vh;
-    width: 100%;
-}
+
 
 
 header{
+    height: 5vh;
+    background-color: #444444;
+    position: absolute;
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    top: 0;
 
 }
 .cart-icon{
@@ -18,16 +23,16 @@ header{
     width: 50px;
     height: 50px;
     right: 10px;
-    top: 10px;
+    top: 0;
     z-index: 10;
 }
 .cart-ctn{
-    background: cornflowerblue;
+    background: white;
     position: absolute;
     top: 0 ;
     right: -500px;
     width: 500px;
-    height: 100vh;
+    height: 90vh;
     max-width: 100vw;
     z-index: 9;
     padding-top: 80px;
@@ -47,7 +52,8 @@ header{
 }
 
 .article{
-    height: 90%;
+    margin-top: 5vh;
+    height: 80vh;
     display: flex;
 }
 .left{
@@ -86,17 +92,37 @@ header{
     height: 80px;
     width: 80px;
 }
-
 .center{
     width: 60%;
     height: 100%;
     overflow: hidden;;
 }
-
 .des{
     font-size: 27px;
 }
-
 .right{
     width: 30%;
+    display: flex;
+
+    align-items: center;
+    flex-direction: column;
+}
+.bottom{
+    display: flex;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    justify-content: space-evenly;
+}
+
+.All,com{
+    background-color: rgb(129, 23, 23);
+    padding: 7px;
+    border-radius: 10px;
+    color: white;
+    border: black;
+}
+
+.spec{
+    font-size: 24px;
 }

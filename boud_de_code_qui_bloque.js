@@ -18,3 +18,8 @@ const hightechHover = document.querySelectorAll(".hightech-img-hover");
 
 hightechImg.addEventListener("mouseover", () => {hightechHover.style.display = "block";});
 hightechImg.addEventListener("mouseout", () => {hightechHover.style.display = "none";});
+
+
+//<div class="quantity"> <button> - </button> ${quantity} <button> + </button> </div>
+
+

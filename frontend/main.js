@@ -176,6 +176,19 @@ function toggleCart() {
     }
 }
 
+//Fonction quantité d'article dans le panier
+
+function getQuantity() {
+    let quantity = 0;
+    let foundProduct = hightechs.find(hightech => hightech.id === id);
+    if (foundProduct != undefined) {
+        quantity =+ 1;
+    }else {
+        quantity = 0;
+    }
+    return quantity;
+}
+
 //localStorage
 
 let cartList = JSON.parse(localStorage.getItem("cart")) || [];
@@ -193,10 +206,12 @@ function loadcart() {
         let hightechCart = document.createElement("div");
         hightechCart.classList.add("cart-item");
         hightechCart.innerHTML = `
-        <img class="cart-hightech-img" src="${hightech.img_1}" />
-        <div> ${hightech.name} </div>
-        <div> ${hightech.price}€ </div>
-        <button onclick="removefromcard(${hightech.id})"> Supprimer </button>
+        <div class="cart-item">
+            <img class="cart-hightech-img" src="${hightech.img_1}" />
+            <div> ${hightech.name} </div>
+            <div> ${hightech.price}€ </div>
+            <button onclick="removefromcard(${hightech.id})"> Supprimer </button>
+        </div>
         `;
         cartCtn.appendChild(hightechCart);
     });

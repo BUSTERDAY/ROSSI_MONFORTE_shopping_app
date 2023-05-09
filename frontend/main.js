@@ -9,7 +9,12 @@ let filteredhightechs;
 //chargement des objets hightechs
 
 function Loadhightechs() {
-    fetch(`${url}/hightechs`)
+    fetch(`${url}/hightechs`,{
+        method: "GET",
+        headers: {
+            "x-api-key":"11Xc47MijzE8269MrYMm7Uypj3QeEElQMITtUaTXDnWk9LGeGnMuyyeXtVQym3OS"
+        }
+    })
         .then(response => {
             return response.json();
         })

@@ -9,14 +9,17 @@ let Url = "http://localhost:3000/hightech";
 let produit;
 
 function LoadId() {
-    fetch(`${Url}/${params["id"]}`)
+    fetch(`${Url}/${params["id"]}`, {
+        method: "GET",
+        headers: {
+            "x-api-key": "11Xc47MijzE8269MrYMm7Uypj3QeEElQMITtUaTXDnWk9LGeGnMuyyeXtVQym3OS"
+        }
+    })
         .then(response => {
             return response.json();
         })
         .then(data => {
-
             produit = data.hightech;
-            console.log(produit);
             LoadSlider();
             LoadInfo();
             loadcart();

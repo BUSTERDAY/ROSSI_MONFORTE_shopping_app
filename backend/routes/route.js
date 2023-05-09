@@ -1,9 +1,9 @@
 const express = require('express');
 const routes = express.Router();
 const controleurs = require('../controleurs/controleurs.js');
+const key =require(("../Key/API_key.js"))
 
-//définir les routes
-routes.get('/hightechs', controleurs.gethightechs);
-routes.get('/hightech/:id', controleurs.gethightechById);
+routes.get('/hightechs',key.authenticateKey ,controleurs.gethightechs);
+routes.get('/hightech/:id',key.authenticateKey, controleurs.gethightechById);
 
 module.exports = routes;

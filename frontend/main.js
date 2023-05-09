@@ -33,25 +33,42 @@ function Gethightechs() {
         let hightechCtn = document.createElement("div");
         hightechCtn.classList.add("hightech-item");
         hightechCtn.id = `${hightech.id}`
-        hightechCtn.innerHTML = `
-        <div class="CardByIndex"> 
-            <img class="hightech-img" src="${hightech.img_1}" />
-            <!-- <img class="hightech-img-hover" src="${hightech.img_2}" /> -->
-            <div class="nom-hightech"> ${hightech.name} </div>
-            <div class="prices"> ${hightech.price}€ </div>
-            <div class="reduction"> -${hightech.reduction}% </div>
-            <div class="priceswithreduction"> ${hightech.price - (hightech.price * hightech.reduction / 100)}€ </div>
-            <button onclick="addForCarts(${hightech.id})"> Ajouter au panier </button>
-            <form method="GET" action="detail.html">
-                <button name="id" type="submit" value="${hightech.id}">Voir fiche produit</button>
-            </form>
-        </div>
-        `;
+
+        // si reduction, calcule du nouveau prix, sinon affiche le prix normal
+
+        if (hightech.reduction > 0) {
+            hightechCtn.innerHTML = `
+                <div class="CardByIndex"> 
+                    <img class="hightech-img" src="${hightech.img_1}" />
+                    <!-- <img class="hightech-img-hover" src="${hightech.img_2}" /> -->
+                    <div class="nom-hightech"> ${hightech.name} </div>
+                    <div class="prices"> ${hightech.price}€ </div>
+                    <div class="reduction"> -${hightech.reduction}% </div>
+                    <div class="priceswithreduction"> ${hightech.price - (hightech.price * hightech.reduction / 100)}€ </div>
+                    <button onclick="addForCarts(${hightech.id})"> Ajouter au panier </button>
+                    <form method="GET" action="detail.html">
+                        <button name="id" type="submit" value="${hightech.id}">Voir fiche produit</button>
+                    </form>
+                </div>
+                `;
+        } else {
+            hightechCtn.innerHTML = `
+                <div class="CardByIndex"> 
+                    <img class="hightech-img" src="${hightech.img_1}" />
+                    <!-- <img class="hightech-img-hover" src="${hightech.img_2}" /> -->
+                    <div class="nom-hightech"> ${hightech.name} </div>
+                    <div> ${hightech.price}€ </div>
+                    <button onclick="addForCarts(${hightech.id})"> Ajouter au panier </button>
+                    <form method="GET" action="detail.html">
+                        <button name="id" type="submit" value="${hightech.id}">Voir fiche produit</button>
+                    </form>
+                </div>
+                `;
+        }
         container.appendChild(hightechCtn);
 
     });
 }
-
 
 //Filtrage
 

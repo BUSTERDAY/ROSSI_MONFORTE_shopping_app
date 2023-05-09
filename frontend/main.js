@@ -15,6 +15,7 @@ function Loadhightechs() {
             "x-api-key":"11Xc47MijzE8269MrYMm7Uypj3QeEElQMITtUaTXDnWk9LGeGnMuyyeXtVQym3OS"
         }
     })
+    fetch(`${url}/hightechs`)
         .then(response => {
             return response.json();
         })

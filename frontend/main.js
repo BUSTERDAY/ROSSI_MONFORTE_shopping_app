@@ -31,6 +31,8 @@ function Loadhightechs() {
 
 //récupération des objets hightechs
 
+let PriceWhitReduction;
+
 function Gethightechs() {
     container.innerHTML = "";
     console.log(filteredhightechs);
@@ -41,7 +43,9 @@ function Gethightechs() {
 
         // si reduction, calcule du nouveau prix, sinon affiche le prix normal
 
+        
         if (hightech.reduction > 0) {
+            PriceWhitReduction = hightech.price - (hightech.price * hightech.reduction / 100);
             hightechCtn.innerHTML = `
                 <div class="CardByIndex"> 
                     <img class="hightech-img" src="${hightech.img_1}" />
@@ -49,7 +53,7 @@ function Gethightechs() {
                     <div class="nom-hightech"> ${hightech.name} </div>
                     <div class="prices"> ${hightech.price}€ </div>
                     <div class="reduction"> -${hightech.reduction}% </div>
-                    <div class="priceswithreduction"> ${hightech.price - (hightech.price * hightech.reduction / 100)}€ </div>
+                    <div class="priceswithreduction"> ${PriceWhitReduction}€ </div>
                     <button onclick="addForCarts(${hightech.id})"> Ajouter au panier </button>
                     <form method="GET" action="detail.html">
                         <button name="id" type="submit" value="${hightech.id}">Voir fiche produit</button>
@@ -57,19 +61,22 @@ function Gethightechs() {
                 </div>
                 `;
         } else {
+            PriceWhitReduction = hightech.price;
             hightechCtn.innerHTML = `
                 <div class="CardByIndex"> 
                     <img class="hightech-img" src="${hightech.img_1}" />
                     <!-- <img class="hightech-img-hover" src="${hightech.img_2}" /> -->
                     <div class="nom-hightech"> ${hightech.name} </div>
-                    <div> ${hightech.price}€ </div>
+                    <div> ${PriceWhitReduction}€ </div>
                     <button onclick="addForCarts(${hightech.id})"> Ajouter au panier </button>
                     <form method="GET" action="detail.html">
                         <button name="id" type="submit" value="${hightech.id}">Voir fiche produit</button>
                     </form>
                 </div>
                 `;
+                
         }
+        console.log(PriceWhitReduction);
         container.appendChild(hightechCtn);
 
     });
@@ -218,10 +225,19 @@ function loadcart() {
     cartList.forEach(hightech => {
         let hightechCart = document.createElement("div");
         hightechCart.classList.add("cart-item");
+
+        // si reduction, calcule du nouveau prix, sinon affiche le prix normal
+
+        if (hightech.reduction > 0) {
+            PriceWhitReduction = hightech.price - (hightech.price * hightech.reduction / 100);
+        } else {
+            PriceWhitReduction = hightech.price;
+        }
+
         hightechCart.innerHTML = `
         <img class="cart-hightech-img" src="${hightech.img_1}" alt="img" />
         <div> ${hightech.name} </div>
-        <div> ${hightech.price}€ </div>
+        <div> ${PriceWhitReduction}€ </div>
         <button onclick="removefromcard(${hightech.id})"> Supprimer </button>
         `;
         cartCtn.appendChild(hightechCart);
@@ -250,8 +266,15 @@ function Loadbottomcart() {
     total_price.className = "price";
     nbr = 0;
     for (let i = 0; i < cartList.length; i++) {
-        console.log((cartList[i].price));
-        nbr += cartList[i].price;
+        if (cartList[i].reduction > 0) {
+            console.log((PriceWhitReduction))
+            PriceWhitReduction = cartList[i].price - (cartList[i].price * cartList[i].reduction / 100); 
+            nbr += PriceWhitReduction;
+        } else {
+            console.log((cartList[i].price));
+            nbr += cartList[i].price;
+        }
+        
     }
     console.log(nbr)
     total_price.innerHTML = `Prix total: ${nbr}`

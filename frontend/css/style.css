@@ -154,16 +154,28 @@ h4{
 }
 
 .hightech-img{
+    top : 5px;
     height: 300px;
     width: 300px;
     background-image: none;
     background-color: white;
     padding : 5px;
+    z-index: 1;
+}
+
+/* .hightech-img-hover{
+   top : 5px;
+    height: 300px;
+    width: 300px;
+    background-image: none;
+    background-color: white;
+    padding : 5px;
+    z-index: 2; 
 }
 
 .hightech-img:hover{
-    display: none;
-}
+    z-index: 3;
+} */
 
 .hightech-img-hover{
     height: 300px;
@@ -214,4 +226,18 @@ h4{
     border-radius: 10px;
     background-color: white;
     padding: 5px;
+}
+
+.prices{}
+
+.reduction{
+    border-radius: 10%;
+    background-color: rgb(66, 5, 5);
+    color: white;
+    padding: 5px;
+}
+
+.priceswithreduction{
+    color :white;
+    
 }

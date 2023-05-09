@@ -9,7 +9,7 @@
       "autonomy": "4 700 mAh",
       "colors": ["black", "silver", "orange"],
       "storage": "512 GO",
-      "reduction": 0,
+      "reduction": 10,
       "img_1": "images/HuaweiMate50Pro/image1.jpg",
       "img_2": "images/HuaweiMate50Pro/image2.jpg",
       "img_3": "images/HuaweiMate50Pro/image3.jpg"
@@ -65,7 +65,7 @@
       "autonomy": "3 300 mAh",
       "colors": ["blue"],
       "storage": "128Go or 256Go",
-      "reduction": 0,
+      "reduction": 10,
       "img_1": "images/GalaxyZFlip4/image1.png",
       "img_2": "images/GalaxyZFlip4/image2.png",
       "img_3": "images/GalaxyZFlip4/image3.png"
@@ -135,7 +135,7 @@
       "autonomy": "4 800 mAh",
       "colors": ["black"],
       "storage": "128 Go",
-      "reduction": 0,
+      "reduction": 10,
       "img_1": "images/HonorMagic4Lite/image1.jpg",
       "img_2": "images/HonorMagic4Lite/image2.jpg",
       "img_3": "images/HonorMagic4Lite/image3.jpg"

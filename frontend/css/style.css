@@ -239,6 +239,14 @@ h4{
     padding: 5px;
 }
 
-.priceswithreduction{
+.PricesWithReduction{
     color :white;
+}
+
+.PriceAndReduction{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 60%;
 }

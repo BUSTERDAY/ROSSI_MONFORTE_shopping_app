@@ -12,28 +12,23 @@ body{
 }
 header{
     height: 5vh;
-    background-color: #444444;
     position: absolute;
     width: 100%;
     color: white;
     display: flex;
     justify-content: center;
     top: 0;
-
     background-color: rgb(82, 82, 82);
     margin : 0;
     padding: 0;
 }
 
 .title{
+    padding-top: 5vh;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    top:0;
-    height: 80px;
-    background-color: rgb(66, 5, 5);
-
 }
 
 .CardByIndex{
@@ -85,6 +80,7 @@ h4{
     justify-content: center;
     align-items: center;
     margin: 10px 0;
+
 }
 
 .sortByPrices{
@@ -106,7 +102,6 @@ h4{
 }
 
 .color-picker-ctn{
-    padding-top: 5vh;
     margin: 10px 0;
     display: flex;
     gap:10px;

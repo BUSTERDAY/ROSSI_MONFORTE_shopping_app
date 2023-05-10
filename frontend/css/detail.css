@@ -3,9 +3,13 @@
     padding: 0;
     font-family: 'Montserrat', sans-serif;
 }
+a{
+    text-decoration: none;
+    color: white;
+}
 
 header{
-    height: 5vh;
+    height: 8vh;
     background-color: #444444;
     position: absolute;
     width: 100%;
@@ -51,7 +55,7 @@ header{
 }
 
 .article{
-    margin-top: 5vh;
+    margin-top: 8vh;
     height: 80vh;
     display: flex;
 }

@@ -166,29 +166,24 @@ h4{
     justify-content: space-between;
 }
 
-.hightech-img{
+.hightech-img1{
     top : 5px;
     height: 300px;
     width: 300px;
     background-image: none;
     background-color: white;
     padding : 5px;
-    z-index: 1;
 }
 
-/* .hightech-img-hover{
-   top : 5px;
+.hightech-img2{
+    top : 5px;
     height: 300px;
     width: 300px;
     background-image: none;
     background-color: white;
     padding : 5px;
-    z-index: 2; 
+    display : none;
 }
-
-.hightech-img:hover{
-    z-index: 3;
-} */
 
 .hightech-img-hover{
     height: 300px;

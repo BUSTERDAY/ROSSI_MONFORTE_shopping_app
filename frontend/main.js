@@ -30,17 +30,11 @@ function Loadhightechs() {
         .catch(error => console.log("erreur : " + error));
 }
 
-//Change image au survol
-
-
-
-function ChangeImage(img, newimg) {
-    img.src = newimg;
-}
-
 //récupération des objets hightechs
 
 let PriceWhitReduction;
+let img1 = document.createElement("img");
+let img2 = document.createElement("img");
 
 function Gethightechs() {
     container.innerHTML = "";
@@ -54,11 +48,14 @@ function Gethightechs() {
 
         
         if (hightech.reduction > 0) {
+            img1.src = hightech.img_1;
+            img1.className = "hightech-img1";
+            img2.src = hightech.img_2;
+            img2.className = "hightech-img2";
             PriceWhitReduction = hightech.price - (hightech.price * hightech.reduction / 100);
             hightechCtn.innerHTML = `
                 <div class="CardByIndex"> 
                     <img class="hightech-img" src="${hightech.img_1}" />
-                    <!-- <img class="hightech-img-hover" src="${hightech.img_2}" /> -->
                     <div class="nom-hightech"> ${hightech.name} </div>
                     <div class="PriceAndReduction">
                         <div class="prices"> ${hightech.price}€ </div>
@@ -76,7 +73,6 @@ function Gethightechs() {
             hightechCtn.innerHTML = `
                 <div class="CardByIndex"> 
                     <img class="hightech-img" src="${hightech.img_1}" />
-                    <!-- <img class="hightech-img-hover" src="${hightech.img_2}" /> -->
                     <div class="nom-hightech"> ${hightech.name} </div>
                     <div> ${PriceWhitReduction}€ </div>
                     <button onclick="addForCarts(${hightech.id})"> Ajouter au panier </button>
@@ -91,6 +87,29 @@ function Gethightechs() {
         container.appendChild(hightechCtn);
 
     });
+}
+
+//Change image au survol
+
+addEventListener("mouseover", (e) => {
+    
+    if (e.target.classList.contains("hightech-img")) {
+        let img = e.target;
+        let newimg = img.src(`${hightechs.img_2}`);
+        ChangeImage(img, newimg);
+    }
+});
+
+addEventListener("mouseout", (e) => {
+    if (e.target.classList.contains("hightech-img")) {
+        let img = e.target;
+        let newimg = img.src(`${hightechs.img_1}`);
+        ChangeImage(img, newimg);
+    }
+});
+
+function ChangeImage(img, newimg) {
+    img.src = newimg;
 }
 
 //Filtrage

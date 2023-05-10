@@ -4,12 +4,14 @@ let params = {};
 for (let param of searchParams.entries()) {
     params[param[0]] = param[1];
 }
+let ID = params["id"]
+console.log(ID)
 
 let Url = "http://localhost:3000/hightech";
 let produit;
 
 function LoadId() {
-    fetch(`${Url}/${params["id"]}`, {
+    fetch(`${Url}/${ID}`, {
         method: "GET",
         headers: {
             "x-api-key": "11Xc47MijzE8269MrYMm7Uypj3QeEElQMITtUaTXDnWk9LGeGnMuyyeXtVQym3OS"
@@ -34,7 +36,6 @@ function LoadSlider() {
     let nbr_img = 0
     let p = 1;
     for (let i = 1; i <= 3; i++) {
-        console.log(produit[`img_${i}`] !== "")
         if (produit[`img_${i}`] !== "") {
             nbr_img++
             slider.style.width = (300 * nbr_img) + "px"
@@ -54,7 +55,6 @@ function LoadSlider() {
     let btn_img = document.querySelectorAll(".btn-img")
     for (let i = 0; i < btn_img.length; i++) {
         btn_img[i].addEventListener("click", function () {
-            console.log(btn_img[i].value)
             p = -btn_img[i].value + 1;
             slider.style.transform = "translate(" + p * "300" + "px)";
             slider.style.transition = "all 0.5s ease";
@@ -62,20 +62,24 @@ function LoadSlider() {
     }
 }
 
+let sel = document.createElement("select")
 function LoadInfo() {
     let container = document.querySelector(".center");
     let tilte = document.createElement("h1")
     tilte.innerHTML = `${produit.name}`
     container.appendChild(tilte);
+    let div = document.createElement("div")
+    div.className = "ctn-des"
+    container.appendChild(div)
     let des = document.createElement("div")
     des.className = "des";
     let txt_court = produit["description"].slice(0, 150)
     des.innerHTML = `${txt_court}...`;
-    container.appendChild(des)
+    div.appendChild(des)
     let btn = document.createElement("button")
     btn.className = "plus"
     btn.innerHTML = "Voir plus";
-    container.appendChild(btn)
+    div.appendChild(btn)
     btn.addEventListener("click", () => {
         des.textContent = produit["description"]
         btn.style.display = "none";
@@ -85,7 +89,7 @@ function LoadInfo() {
     spec.innerHTML = `
     autonomie : ${produit["autonomy"]}<br>
     couleur : ${produit["colors"]}<br>
-    storage : ${produit["storage"]}<br>
+    stockage : ${produit["storage"]}<br>
     `;
     container.appendChild(spec);
     let ctn = document.querySelector(".right");
@@ -94,42 +98,98 @@ function LoadInfo() {
      Prix : ${produit["price"]}
     `;
     let bout = document.createElement("button");
-    bout.onclick=addForCarts();
-    bout.innerHTML="Ajouter au panier";
-    bout.className="add-cart" ;
+    for(let i =1;i<=10;i++){
+        let option =document.createElement("option")
+        option.value= `${i}`
+        option.id=`option${i}`;
+        option.innerHTML= `${i}`
+        sel.appendChild(option)
+    }
+    bout.onclick = addForCarts;
+    bout.innerHTML = "Ajouter au panier";
+    bout.className = "add-cart";
     ctn.appendChild(boite);
-    ctn.appendChild(bout);
-
-
+    ctn.appendChild(sel)
+    ctn.appendChild(bout)
 }
 
 let cartList = JSON.parse(localStorage.getItem("cart")) || [];
 const cartIcon = document.querySelector(".cart-icon");
 const cartCtn = document.querySelector(".cart-ctn");
-
 cartIcon.addEventListener("click", toggleCart);
-
 function addForCarts() {
+    let index = sel["selectedIndex"]
+    let quantity = sel[index].value;
+    console.log(Number(quantity))
+    let verif = true
+    cartList.forEach(prod => {
+        if (prod.id === produit.id) {
+            produit.quantity += Number(quantity);
+            verif = false
+            removefromcard(produit.id)
+        }
+    })
+    if (verif) {
+        produit.quantity = Number(quantity);
+        console.log(produit["quantity"])
+        console.log(produit)
+    }
     cartList.push(produit);
     localStorage.setItem("cart", JSON.stringify(cartList));
     loadcart();
+
 }
+
+function moins(art) {
+    cartList.forEach(prod => {
+        if (prod.id === art) {
+            console.log('plus')
+            prod["quantity"]--;
+            console.log(prod["quantity"]);
+            removefromcard(prod.id);
+            if (prod.quantity > 0) {
+                cartList.push(produit);
+                localStorage.setItem("cart", JSON.stringify(cartList));
+                loadcart();
+            }
+        }
+    })
+}
+
+
+function plus(art) {
+    cartList.forEach(prod => {
+        if (prod.id === art) {
+            console.log('plus')
+            prod["quantity"]++;
+            console.log(prod["quantity"]);
+            removefromcard(prod.id);
+            cartList.push(prod);
+            localStorage.setItem("cart", JSON.stringify(cartList));
+        }
+    })
+    loadcart();
+}
+
 
 function loadcart() {
     cartCtn.innerHTML = "";
-    console.log(cartList)
     cartList.forEach(hightech => {
-        console.log("ici")
         let hightechCart = document.createElement("div");
         hightechCart.classList.add("cart-item");
         hightechCart.innerHTML = `
         <img class="cart-hightech-img" src="${hightech.img_1}" />
         <div> ${hightech.name} </div>
-        <div> ${hightech.price}€ </div>
+        <div>
+                <button onclick="moins(${hightech.id})" class="moins"><img src="images/logo/moins.png" alt="moins"></button>
+                ${hightech["quantity"]}
+                <button onclick="plus(${hightech.id})" class="plus"><img src="images/logo/plus.png" alt="plus"></button>
+        </div>
+        <div> ${hightech.price * hightech["quantity"]}€ </div>
         <button onclick="removefromcard(${hightech.id})"> Supprimer </button>
-        
-        `;
 
+        `
+        ;
         cartCtn.appendChild(hightechCart);
     });
     Loadbottomcart();
@@ -138,18 +198,19 @@ function loadcart() {
 let btn_supr = document.createElement("button")
 
 function Loadbottomcart() {
+    console.log(produit)
     let bottom = document.createElement("div");
-    bottom.className ="bottom";
+    bottom.className = "bottom";
     cartCtn.appendChild(bottom);
     let total_price = document.createElement("div");
     total_price.className = "price";
     nbr = 0;
     for (let i = 0; i < cartList.length; i++) {
-        console.log((cartList[i].price));
-        nbr += cartList[i].price;
+        nbr += cartList[i].price * cartList[i].quantity;
     }
-    console.log(nbr)
-    total_price.innerHTML = `Prix total: ${nbr}`
+    total_price.innerHTML =
+        `Prix total: ${nbr}€`
+
     bottom.appendChild(total_price)
     btn_supr.className = "All"
     btn_supr.innerHTML = "Tout supprimer"
@@ -158,7 +219,6 @@ function Loadbottomcart() {
     btn_com.className = "com"
     btn_com.innerHTML = "commander"
     bottom.appendChild(btn_com);
-
 }
 
 
@@ -173,8 +233,7 @@ function removefromcard(id) {
 }
 
 function removeall() {
-    console.log("ton pere")
-    cartList.splice(0,cartList.length);
+    cartList.splice(0, cartList.length);
     localStorage.setItem("cart", JSON.stringify(cartList));
     loadcart();
 }

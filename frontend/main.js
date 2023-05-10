@@ -249,6 +249,55 @@ function addForCarts(id) {
     localStorage.setItem("cart", JSON.stringify(cartList));
     loadcart();
 }
+function addForCarts(id) {
+    let verif = true
+    let hightech = hightechs.find(hightech => hightech.id === id);
+    cartList.forEach(prod => {
+        if (prod.id === id) {
+            produit.quantity +=1 ;
+            verif = false
+            removefromcard(hightech.id)
+        }
+    })
+    if (verif) {
+        hightech.quantity = 1;
+    }
+    cartList.push(hightech);
+    localStorage.setItem("cart", JSON.stringify(cartList));
+    loadcart();
+
+}
+
+function moins(art) {
+    cartList.forEach(prod => {
+        if (prod.id === art) {
+            console.log('plus')
+            prod["quantity"]--;
+            console.log(prod["quantity"]);
+            removefromcard(prod.id);
+            if (prod.quantity > 0) {
+                cartList.push(produit);
+                localStorage.setItem("cart", JSON.stringify(cartList));
+                loadcart();
+            }
+        }
+    })
+}
+
+
+function plus(art) {
+    cartList.forEach(prod => {
+        if (prod.id === art) {
+            console.log('plus')
+            prod["quantity"]++;
+            console.log(prod["quantity"]);
+            removefromcard(prod.id);
+            cartList.push(prod);
+            localStorage.setItem("cart", JSON.stringify(cartList));
+        }
+    })
+    loadcart();
+}
 
 function loadcart() {
     cartCtn.innerHTML = "";
@@ -267,7 +316,12 @@ function loadcart() {
         hightechCart.innerHTML = `
         <img class="cart-hightech-img" src="${hightech.img_1}" alt="img" />
         <div> ${hightech.name} </div>
-        <div> ${PriceWhitReduction}€ </div>
+        <div>
+                <button onclick="moins(${hightech.id})" class="moins"><img src="images/logo/moins.png" alt="moins"></button>
+                ${hightech["quantity"]}
+                <button onclick="plus(${hightech.id})" class="plus"><img src="images/logo/plus.png" alt="plus"></button>
+        </div>
+        <div> ${PriceWhitReduction * hightech.quantity}€ </div>
         <button onclick="removefromcard(${hightech.id})"> Supprimer </button>
         `;
         cartCtn.appendChild(hightechCart);
@@ -292,30 +346,27 @@ function removeall() {
 let btn_supr = document.createElement("button")
 
 function Loadbottomcart() {
+    let bottom = document.createElement("div");
+    bottom.className = "bottom";
+    cartCtn.appendChild(bottom);
     let total_price = document.createElement("div");
     total_price.className = "price";
     nbr = 0;
     for (let i = 0; i < cartList.length; i++) {
-        if (cartList[i].reduction > 0) {
-            console.log((PriceWhitReduction))
-            PriceWhitReduction = cartList[i].price - (cartList[i].price * cartList[i].reduction / 100); 
-            nbr += PriceWhitReduction;
-        } else {
-            console.log((cartList[i].price));
-            nbr += cartList[i].price;
-        }
-        
+        console.log("reudction"+cartList[i].reduction)
+        nbr += (cartList[i].price - (cartList[i].price*(cartList[i].reduction/100))) * cartList[i].quantity;
     }
-    console.log(nbr)
-    total_price.innerHTML = `Prix total: ${nbr}`
-    cartCtn.appendChild(total_price)
+    total_price.innerHTML =
+        `Prix total: ${nbr}€`
+
+    bottom.appendChild(total_price)
     btn_supr.className = "All"
     btn_supr.innerHTML = "Tout supprimer"
-    cartCtn.appendChild(btn_supr);
+    bottom.appendChild(btn_supr);
     let btn_com = document.createElement("button")
     btn_com.className = "com"
     btn_com.innerHTML = "commander"
-    cartCtn.appendChild(btn_com);
+    bottom.appendChild(btn_com);
 }
 btn_supr.addEventListener("click", removeall)
 

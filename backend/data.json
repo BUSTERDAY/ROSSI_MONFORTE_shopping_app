@@ -140,19 +140,5 @@
       "img_2": "images/HonorMagic4Lite/image2.jpg",
       "img_3": "images/HonorMagic4Lite/image3.jpg"
     }
-  ],
-  "category": [
-    {
-      "id": "A",
-      "name": "Commune"
-    },
-    {
-      "id": "B",
-      "name": "Rare"
-    },
-    {
-      "id": "C",
-      "name": "Légendaire"
-    }
   ]
 }

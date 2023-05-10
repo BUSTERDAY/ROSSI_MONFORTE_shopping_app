@@ -30,6 +30,14 @@ function Loadhightechs() {
         .catch(error => console.log("erreur : " + error));
 }
 
+//Change image au survol
+
+
+
+function ChangeImage(img, newimg) {
+    img.src = newimg;
+}
+
 //récupération des objets hightechs
 
 let PriceWhitReduction;

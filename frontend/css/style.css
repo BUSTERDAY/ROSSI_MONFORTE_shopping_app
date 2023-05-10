@@ -8,7 +8,7 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: black;
+
 }
 header{
     height: 5vh;
@@ -19,6 +19,20 @@ header{
     display: flex;
     justify-content: center;
     top: 0;
+
+    background-color: rgb(82, 82, 82);
+    margin : 0;
+    padding: 0;
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    top:0;
+    height: 80px;
+    background-color: rgb(66, 5, 5);
 
 }
 
@@ -244,5 +258,14 @@ h4{
     padding: 5px;
 }
 
+
 .priceswithreduction{
+}
+
+.PriceAndReduction{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 60%;
 }

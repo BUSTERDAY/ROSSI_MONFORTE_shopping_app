@@ -11,7 +11,7 @@ body{
 
 }
 header{
-    height: 5vh;
+    height: 8vh;
     position: absolute;
     width: 100%;
     color: white;
@@ -24,7 +24,7 @@ header{
 }
 
 .title{
-    padding-top: 5vh;
+    padding-top: 7vh;
     display: flex;
     justify-content: center;
     align-items: center;
